@@ -52,11 +52,20 @@
         center: start_point,
         zoom: 15
       });
-      let icon = 
-      let marker = new google.maps.Marker({ 
-        position: start_point, map: map 
-        icon: image
-        });
+      let marker = new google.maps.Marker({
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: start_point,
+        map: map
+      });
+      marker.addListener('click', toggleBounce);
+    }
+    function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBtS9nwN1wVeZ8kXjoNGenFVFvIZm4hXc&callback=initMap"
