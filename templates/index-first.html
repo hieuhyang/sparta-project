@@ -39,9 +39,20 @@
 </head>
 
 <body>
+  <!-- 로고 넣는 방법!!! -->
   <div class='Logo'>
     <br><img src="{{ url_for('static', filename='LOGO.png') }}">
   </div>
+  <!-- 여기까지로고!! -->
+  <br>
+  <p>어디로 떠나볼까요?</p>
+  <button type="button" class="btn btn-outline-danger">레스토랑</button>
+  <button type="button" class="btn btn-outline-secondary">카페</button>
+  <button type="button" class="btn btn-outline-warning">바</button>
+  <button type="button" class="btn btn-outline-success">박물관</button>
+  <button type="button" class="btn btn-outline-info">미술관</button>
+  <button type="button" class="btn btn-outline-primary">쇼핑몰</button>
+  <button type="button" class="btn btn-outline-dark">스파</button>
   <br>
   <div id="map"></div>
   <script>
@@ -57,6 +68,7 @@
         animation: google.maps.Animation.DROP,
         position: start_point,
         map: map
+
       });
       marker.addListener('click', toggleBounce);
     }
